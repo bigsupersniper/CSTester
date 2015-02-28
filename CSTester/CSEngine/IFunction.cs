@@ -22,6 +22,6 @@ namespace CSTester.CSEngine
         /// <summary>
         /// 函数调用入口委托
         /// </summary>
-        Action<JObject> Invoker { get; set; }
+        Action Invoker { get; set; }
     }
 }

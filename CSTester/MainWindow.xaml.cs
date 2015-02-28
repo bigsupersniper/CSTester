@@ -129,7 +129,9 @@ namespace CSTester
                     {
                         json = new JObject();
                     }
-                    func.Invoker(json);
+
+                    func.Json = json;
+                    func.Invoker();
                 }
             }
             catch (Exception ex)

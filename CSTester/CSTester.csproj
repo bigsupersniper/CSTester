@@ -137,7 +137,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="LF.Toolkit\1.0.1\LF.Toolkit.Util.dll" />
+    <Resource Include="LF.Toolkit\1.0.1\LF.Toolkit.Util.XML" />
+    <Content Include="LF.Toolkit\1.0.1\log4net.dll" />
+    <Resource Include="LF.Toolkit\1.0.1\log4net.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

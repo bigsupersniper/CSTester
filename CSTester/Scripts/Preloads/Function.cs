@@ -10,5 +10,5 @@ public class Function : IFunction
 
     public JObject Json { get; set; }
 
-    public Action<JObject> Invoker { get; set; }
+    public Action Invoker { get; set; }
 }
