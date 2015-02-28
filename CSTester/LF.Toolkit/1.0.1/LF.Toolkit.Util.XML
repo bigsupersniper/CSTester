@@ -1,0 +1,533 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LF.Toolkit.Util</name>
+    </assembly>
+    <members>
+        <member name="M:LF.Toolkit.Util.Crypto.AESProvider.EncryptToBase64(System.String,System.String)">
+            <summary>
+            将数据加密并用Base64编码
+            </summary>
+            <param name="key">密钥</param>
+            <param name="plainText">明文</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.AESProvider.DecryptFromBase64(System.String,System.String)">
+            <summary>
+            从Base64编码的字符串中解密
+            </summary>
+            <param name="cryptoString">加密的字符串</param>
+            <param name="key">密钥</param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“T:LF.Toolkit.Util.Crypto.BlowfishProvider”忽略有格式错误的 XML 注释 -->
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.#ctor(System.String)">
+             Creates a new Blowfish object using the specified key (oversized
+             password will be cut).
+            
+             @param password the password (treated as a real unicode array)
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.Encrypt_CBC(System.String)">
+             Encrypts a string (treated in UNICODE) using the
+             csharp RNGCryptoServiceProvider random generator, which isn't that
+             great for creating IVs
+            
+             @param sPlainText string to encrypt
+             @return encrypted string in binhex format
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.Decrypt_CBC(System.String)">
+            decrypts a hexbin string (handling is case sensitive)
+            @param sCipherText hexbin string to decrypt
+            @return decrypted string (null equals an error)
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.Destroy">
+            destroys (clears) the encryption engine,
+            after that the instance is not valid anymore
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.ByteArrayToLong(System.Byte[],System.Int32)">
+            gets bytes from an array into a long
+            @param buffer where to get the bytes
+            @param nStartIndex index from where to read the data
+            @return the 64bit integer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongToByteArray(System.Int64,System.Byte[],System.Int32)">
+            converts a long o bytes which are put into a given array
+            @param lValue the 64bit integer to convert
+            @param buffer the target buffer
+            @param nStartIndex where to place the bytes in the buffer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.IntArrayToLong(System.Int32[],System.Int32)">
+            converts values from an integer array to a long
+            @param buffer where to get the bytes
+            @param nStartIndex index from where to read the data
+            @return the 64bit integer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongToIntArray(System.Int64,System.Int32[],System.Int32)">
+            converts a long to integers which are put into a given array
+            @param lValue the 64bit integer to convert
+            @param buffer the target buffer
+            @param nStartIndex where to place the bytes in the buffer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.MakeLong(System.UInt32,System.UInt32)">
+            makes a long from two integers (treated unsigned)
+            @param nLo lower 32bits
+            @param nHi higher 32bits
+            @return the built long
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongLower32(System.Int64)">
+            gets the lower 32 bits of a long
+            @param lVal the long integer
+            @return lower 32 bits
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongHight32(System.Int64)">
+            gets the higher 32 bits of a long
+            @param lVal the long integer
+            @return higher 32 bits
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BytesToBinHex(System.Byte[],System.Int32,System.Int32)">
+            converts a byte array to a binhex string
+            @param data the byte array
+            @param nStartPos start index where to get the bytes
+            @param nNumOfBytes number of bytes to convert
+            @return the binhex string
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BinHexToBytes(System.String,System.Byte[],System.Int32,System.Int32,System.Int32)">
+            converts a binhex string back into a byte array (invalid codes will be skipped)
+            @param sBinHex binhex string
+            @param data the target array
+            @param nSrcPos from which character in the string the conversion should begin,
+                           remember that (nSrcPos modulo 2) should equals 0 normally
+            @param nDstPos to store the bytes from which position in the array
+            @param nNumOfBytes number of bytes to extract
+            @return number of extracted bytes
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.ByteArrayToUNCString(System.Byte[],System.Int32,System.Int32)">
+            converts a byte array into an UNICODE string
+            @param data the byte array
+            @param nStartPos where to begin the conversion
+            @param nNumOfBytes number of bytes to handle
+            @return the string
+        </member>
+        <!-- 对于成员“T:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB”忽略有格式错误的 XML 注释 -->
+        <member name="F:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.MAXKEYLENGTH">
+            maximum possible key length 
+        </member>
+        <member name="F:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.BLOCKSIZE">
+            block size of this cipher (in bytes) 
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.#ctor(System.Byte[])">
+            default constructor
+            @param bfkey key material, up to MAXKEYLENGTH bytes
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.CleanUp">
+            to clear data in the boxes before an instance is freed
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Encrypt(System.Byte[],System.Byte[])">
+             Encrypts a byte buffer (should be aligned to an 8 byte border) to another
+             buffer (of the same size or bigger)
+            
+             @param inbuffer buffer with plaintext data
+             @param outbuffer buffer to get the ciphertext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Encrypt(System.Byte[])">
+            encrypts a byte buffer (should be aligned to an 8 byte border) to itself
+            @param buffer buffer to encrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Encrypt(System.Int32[],System.Int32[])">
+            encrypts an integer buffer (should be aligned to an
+            two integer border) to another int buffer (of the
+            same size or bigger)
+            @param inbuffer buffer with plaintext data
+            @param outbuffer buffer to get the ciphertext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Encrypt(System.Int32[])">
+            encrypts an int buffer (should be aligned to a
+            two integer border)
+            @param buffer buffer to encrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Encrypt(System.Int64[],System.Int64[])">
+            encrypts a long buffer to another long buffer (of the same size or bigger)
+            @param inbuffer buffer with plaintext data
+            @param outbuffer buffer to get the ciphertext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Encrypt(System.Int64[])">
+            encrypts a long buffer to itself
+            @param buffer buffer to encrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Decrypt(System.Byte[],System.Byte[])">
+            decrypts a byte buffer (should be aligned to an 8 byte border)
+            to another byte buffer (of the same size or bigger)
+            @param inbuffer buffer with ciphertext data
+            @param outbuffer buffer to get the plaintext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Decrypt(System.Byte[])">
+            decrypts a byte buffer (should be aligned to an 8 byte border) to itself
+            @param buffer buffer to decrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Decrypt(System.Int32[],System.Int32[])">
+            decrypts an integer buffer (should be aligned to an
+            two integer border) to another int buffer (of the same size or bigger)
+            @param inbuffer buffer with ciphertext data
+            @param outbuffer buffer to get the plaintext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Decrypt(System.Int32[])">
+            decrypts an int buffer (should be aligned to an
+            two integer border)
+            @param buffer buffer to decrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Decrypt(System.Int64[],System.Int64[])">
+            decrypts a long buffer to another long buffer (of the same size or bigger)
+            @param inbuffer buffer with ciphertext data
+            @param outbuffer buffer to get the plaintext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.Decrypt(System.Int64[])">
+            decrypts a long buffer to itself
+            @param buffer buffer to decrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.GetCBCIV">
+            get the current CBC IV (for cipher resets)
+            @return current CBC IV
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.GetCBCIV(System.Byte[])">
+            get the current CBC IV (for cipher resets)
+            @param dest wher eto put current CBC IV in network byte ordered array
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.SetCBCIV(System.Int64)">
+            set the current CBC IV (for cipher resets)
+            @param lNewCBCIV the new CBC IV
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.SetCBCIV(System.Byte[])">
+            set the current CBC IV (for cipher resets)
+            @param newCBCIV the new CBC IV  in network byte ordered array
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.#ctor(System.Byte[])">
+            constructor, stores a zero CBC IV
+            @param bfkey key material, up to MAXKEYLENGTH bytes
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.#ctor(System.Byte[],System.Int64)">
+            constructor
+            @param bfkey key material, up to MAXKEYLENGTH bytes
+            @param lInitCBCIV the CBC IV
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.#ctor(System.Byte[],System.Byte[])">
+            constructor
+            @param bfkey key material, up to MAXKEYLENGTH bytes
+            @param initCBCIV the CBC IV (array with min. BLOCKSIZE bytes)
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.CleanUp">
+            cleans up all critical internals,
+            call this if you don't need an instance anymore
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Encrypt(System.Byte[],System.Byte[])">
+            encrypts a byte buffer (should be aligned to an 8 byte border)
+            to another buffer (of the same size or bigger)
+            @param inbuffer buffer with plaintext data
+            @param outbuffer buffer to get the ciphertext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Encrypt(System.Byte[])">
+            encrypts a byte buffer (should be aligned to an 8 byte border) to itself
+            @param buffer buffer to encrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Encrypt(System.Int32[],System.Int32[])">
+            encrypts an int buffer (should be aligned to an
+            two integer border) to another int buffer (of the same
+            size or bigger)
+            @param inbuffer buffer with plaintext data
+            @param outbuffer buffer to get the ciphertext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Encrypt(System.Int32[])">
+            encrypts an integer buffer (should be aligned to an
+            @param buffer buffer to encrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Encrypt(System.Int64[],System.Int64[])">
+            encrypts a long buffer to another long buffer (of the same size or bigger)
+            @param inbuffer buffer with plaintext data
+            @param outbuffer buffer to get the ciphertext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Encrypt(System.Int64[])">
+            encrypts a long buffer to itself
+            @param buffer buffer to encrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Decrypt(System.Byte[],System.Byte[])">
+            decrypts a byte buffer (should be aligned to an 8 byte border)
+            to another buffer (of the same size or bigger)
+            @param inbuffer buffer with ciphertext data
+            @param outbuffer buffer to get the plaintext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Decrypt(System.Byte[])">
+            decrypts a byte buffer (should be aligned to an 8 byte border) to itself
+            @param buffer buffer to decrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Decrypt(System.Int32[],System.Int32[])">
+            decrypts an integer buffer (should be aligned to an
+            two integer border) to another int buffer (of the same size or bigger)
+            @param inbuffer buffer with ciphertext data
+            @param outbuffer buffer to get the plaintext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Decrypt(System.Int32[])">
+            decrypts an int buffer (should be aligned to a
+            two integer border)
+            @param buffer buffer to decrypt
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Decrypt(System.Int64[],System.Int64[])">
+            decrypts a long buffer to another long buffer (of the same size or bigger)
+            @param inbuffer buffer with ciphertext data
+            @param outbuffer buffer to get the plaintext data
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishCBC.Decrypt(System.Int64[])">
+            decrypts a long buffer to itself
+            @param buffer buffer to decrypt
+        </member>
+        <member name="T:LF.Toolkit.Util.Crypto.MD5Provider">
+            <summary>
+            表示Md5 帮助类
+            </summary>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.MD5Provider.Format(System.Byte[],System.String)">
+            <summary>
+            使用指定的格式将当前 System.Byte 对象的值转换为它的等效字符串表示形式。
+            </summary>
+            <param name="buffer"></param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.MD5Provider.ComputeHash(System.String,System.String)">
+            <summary>
+            计算字符串的md5值（默认utf-8）
+            </summary>
+            <param name="str">要计算其哈希代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.MD5Provider.ComputeHash(System.Byte[],System.String)">
+            <summary>
+            计算byte数组的md5值
+            </summary>
+            <param name="buffer">要计算其哈希代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.MD5Provider.ComputeHash(System.Byte[],System.Int32,System.Int32,System.String)">
+            <summary>
+            计算byte数组的md5值
+            </summary>
+            <param name="buffer">要计算其哈希代码的输入</param>
+            <param name="offset">字节数组中的偏移量，从该位置开始使用数据</param>
+            <param name="count">数组中用作数据的字节数</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.MD5Provider.ComputeHash(System.IO.Stream,System.String)">
+            <summary>
+            计算字流的md5值
+            </summary>
+            <param name="str">要计算其哈希代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.SHA1Provider.Format(System.Byte[],System.String)">
+            <summary>
+            使用指定的格式将当前 System.Byte 对象的值转换为它的等效字符串表示形式。
+            </summary>
+            <param name="buffer">要格式化代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.SHA1Provider.ComputeHash(System.String,System.String)">
+            <summary>
+            计算字符串的sha值（默认utf-8）
+            </summary>
+            <param name="str">要计算其哈希代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.SHA1Provider.ComputeHash(System.Byte[],System.String)">
+            <summary>
+            计算byte数组的sha值
+            </summary>
+            <param name="buffer">要计算其哈希代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.SHA1Provider.ComputeHash(System.Byte[],System.Int32,System.Int32,System.String)">
+            <summary>
+            计算byte数组的sha值
+            </summary>
+            <param name="buffer">要计算其哈希代码的输入</param>
+            <param name="offset">字节数组中的偏移量，从该位置开始使用数据</param>
+            <param name="count">数组中用作数据的字节数</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.SHA1Provider.ComputeHash(System.IO.Stream,System.String)">
+            <summary>
+            计算字流的sha值
+            </summary>
+            <param name="str">要计算其哈希代码的输入</param>
+            <param name="format">一个数值格式字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:LF.Toolkit.Util.UploadFileStream">
+            <summary>
+            上传文件类
+            </summary>
+        </member>
+        <member name="T:LF.Toolkit.Util.HttpConst">
+            <summary>
+            HTTP相关常量类
+            </summary>
+        </member>
+        <member name="F:LF.Toolkit.Util.HttpConst.CONTENTTYPE_URLENCODED">
+            <summary>
+            HTTP POST FROM x-www-form-urlencoded
+            </summary>
+        </member>
+        <member name="F:LF.Toolkit.Util.HttpConst.CONTENTTYPE_FORMDATA">
+            <summary>
+            HTTP POST FROM multipart/form-data
+            </summary>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.SerializeQueryString(System.Object)">
+            <summary>
+            序列化参数
+            </summary>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.ProcessCallback(System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            异步响应处理
+            </summary>
+            <param name="successCallback"></param>
+            <param name="failCallback"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.BuildRequest(System.String,System.String,System.String,System.Object,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            生成请求
+            </summary>
+            <param name="contentType"></param>
+            <param name="method"></param>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="headers"></param>
+            <param name="successCallback"></param>
+            <param name="failCallback"></param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Get(System.String,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Get
+            </summary>
+            <param name="url"></param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Get(System.String,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Get
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Get(System.String,System.Object,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Get
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="headers">http headers对象</param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Post(System.String,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Post
+            </summary>
+            <param name="url"></param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Post(System.String,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Post
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Post(System.String,System.Object,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Post
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="headers">http headers对象</param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Upload(System.String,System.Object,LF.Toolkit.Util.UploadFileStream[],System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Upload
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="files"></param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.HttpProvider.Upload(System.String,System.Object,System.Object,LF.Toolkit.Util.UploadFileStream[],System.Action{System.String},System.Action{System.Net.WebException})">
+            <summary>
+            Upload
+            </summary>
+            <param name="url"></param>
+            <param name="parameters"></param>
+            <param name="headers">http headers对象</param>
+            <param name="files"></param>
+            <param name="successCallback">成功回发</param>
+            <param name="failCallback">失败回发</param>
+        </member>
+        <member name="M:LF.Toolkit.Util.StringProvider.CreateRandomAlphanumeric(System.Int32)">
+            <summary>
+            创建随机字母与数字字符串
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.StringProvider.CreateRandomLetters(System.Int32)">
+            <summary>
+            创建随机字母字符串
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.StringProvider.CreateRandomNumeric(System.Int32)">
+            <summary>
+            创建随机数字字符串
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Timestamp.GetTimeMillis(System.DateTime)">
+            <summary>
+            获取时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Timestamp.GetCurrentTimeMillis">
+            <summary>
+            获取时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LF.Toolkit.Util.Timestamp.ParseTimeMillis(System.Int64)">
+            <summary>
+            将时间戳转换为日期
+            </summary>
+            <param name="millis"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
