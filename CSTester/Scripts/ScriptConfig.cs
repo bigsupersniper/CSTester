@@ -35,7 +35,7 @@ public class ScriptConfig : IScriptConfig
 
         Scripts = new string[]
         {
-
+            "StringUtils.cs",
         };
     }
 }

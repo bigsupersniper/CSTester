@@ -75,6 +75,9 @@
     <Compile Include="CSEngine\IScriptConfig.cs" />
     <Compile Include="CSEngine\ScriptBootstrap.cs" />
     <Compile Include="CSEngine\TextWriterProvider.cs" />
+    <None Include="Scripts\StringUtils.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Scripts\ConfigDebug.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -89,13 +89,14 @@ namespace CSTester
                         cbbFunctionList.Items.Add(func);
                     }
                 }
-
-                cbbFunctionList.SelectedIndex = 0;
             }
             else
             {
                 cbbFunctionList.Items.Clear();
+                cbbFunctionList.Items.Add(new { Name = "=========请选择========" });
             }
+
+            cbbFunctionList.SelectedIndex = 0;
         }
 
         private void cbbFunctionList_SelectionChanged(object sender, SelectionChangedEventArgs e)
