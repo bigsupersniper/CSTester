@@ -26,47 +26,75 @@ namespace CSTester.CSEngine
         {
             if (value == null) return;
 
-            Owner.Dispatcher.Invoke(() => Owner.AppendText(value));
+            Owner.Dispatcher.Invoke(() =>
+            {
+                Owner.AppendText(value);
+                Owner.ScrollToEnd();
+            });
         }
 
         public override void Write(object value)
         {
             if (value == null) return;
 
-            Owner.Dispatcher.Invoke(() => Owner.AppendText(value.ToString()));
+            Owner.Dispatcher.Invoke(() =>
+            {
+                Owner.AppendText(value.ToString());
+                Owner.ScrollToEnd();
+            });
         }
 
         public override async Task WriteAsync(string value)
         {
             if (value == null) return;
 
-            await Owner.Dispatcher.InvokeAsync(() => Owner.AppendText(value));
+            await Owner.Dispatcher.InvokeAsync(() =>
+            {
+                Owner.AppendText(value);
+                Owner.ScrollToEnd();
+            });
         }
 
         public override void WriteLine()
         {
-            Owner.Dispatcher.Invoke(() => Owner.AppendText("\r"));
+            Owner.Dispatcher.Invoke(() =>
+            {
+                Owner.AppendText("\r");
+                Owner.ScrollToEnd();
+            });
         }
 
         public override void WriteLine(string value)
         {
             if (value == null) return;
 
-            Owner.Dispatcher.Invoke(() => Owner.AppendText(value.ToString() + "\r"));
+            Owner.Dispatcher.Invoke(() =>
+            {
+                Owner.AppendText(value.ToString() + "\r");
+                Owner.ScrollToEnd();
+            });
         }
 
         public override void WriteLine(object value)
         {
             if (value == null) return;
 
-            Owner.Dispatcher.Invoke(() => Owner.AppendText(value.ToString() + "\r"));
+            Owner.Dispatcher.Invoke(() =>
+            {
+                Owner.AppendText(value.ToString() + "\r");
+                Owner.ScrollToEnd();
+            });
         }
 
         public override async Task WriteLineAsync(string value)
         {
             if (value == null) return;
 
-            await Owner.Dispatcher.InvokeAsync(() => Owner.AppendText(value.ToString() + "\r"));
+            await Owner.Dispatcher.InvokeAsync(() =>
+            {
+                Owner.AppendText(value.ToString() + "\r");
+                Owner.ScrollToEnd();
+            });
         }
     }
 }
