@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -39,10 +40,13 @@ namespace CSTester
             {
                 Console.Out.WriteLine(DateTime.Now.ToString() + " --> 开始载入脚本");
 
+                btnReload.Dispatcher.Invoke(() => btnReload.IsEnabled = false);
+
                 try
                 {
                     ScriptBootstrap.Start();
                     BindComboBox();
+                    btnReload.Dispatcher.Invoke(() => btnReload.IsEnabled = true);
                 }
                 catch (Exception e)
                 {
@@ -51,6 +55,7 @@ namespace CSTester
                 finally
                 {
                     Console.Out.WriteLine(DateTime.Now.ToString() + " --> 脚本载入完成");
+                    btnRestart.Dispatcher.Invoke(() => btnRestart.IsEnabled = true);
                 }
             });
         }
@@ -103,6 +108,8 @@ namespace CSTester
         {
             if (cbbFunctionList.SelectedIndex > 0)
             {
+                btnExec.IsEnabled = true;
+
                 var func = cbbFunctionList.SelectedItem as IFunction;
                 if (func.Json != null)
                 {
@@ -112,6 +119,7 @@ namespace CSTester
             else
             {
                 tbInput.Clear();
+                btnExec.IsEnabled = false;
             }
         }
 
@@ -171,6 +179,18 @@ namespace CSTester
             {
                 tbOutput.Clear();
             }
+        }
+
+        private void btnRestart_Click(object sender, RoutedEventArgs e)
+        {
+            //关闭当前程序
+            Application.Current.Shutdown();
+            //打开新的程序
+            string strAppFileName = Process.GetCurrentProcess().MainModule.FileName;
+            Process thisMudule = new Process();
+            thisMudule.StartInfo.FileName = strAppFileName;
+            thisMudule.StartInfo.WorkingDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            thisMudule.Start();
         }
 
     }

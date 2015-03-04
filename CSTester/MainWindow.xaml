@@ -19,9 +19,10 @@
         </GroupBox>
         <GroupBox Header="操作" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Height="80" Width="394">
             <Grid>
-                <Button x:Name="btnExec" Content="执行" HorizontalAlignment="Left" Margin="26,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnExec_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
-                <Button x:Name="btnReload" Content="重载" HorizontalAlignment="Left" Margin="126,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnReload_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
-                <Button x:Name="btnClear" Content="清空" HorizontalAlignment="Left" Margin="233,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnClear_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
+                <Button x:Name="btnExec" Content="执行" IsEnabled="False" HorizontalAlignment="Left" Margin="26,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnExec_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
+                <Button x:Name="btnReload" Content="重载" IsEnabled="False" HorizontalAlignment="Left" Margin="118,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnReload_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
+                <Button x:Name="btnClear" Content="清空" HorizontalAlignment="Left" Margin="209,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnClear_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
+                <Button x:Name="btnRestart" Content="重启" IsEnabled="False" HorizontalAlignment="Left" Margin="300,14,0,0" VerticalAlignment="Top" Width="70" Height="27" Click="btnRestart_Click" RenderTransformOrigin="0.8,-0.195" FontSize="14" FontFamily="Microsoft YaHei"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="输出" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="280" Width="772">
