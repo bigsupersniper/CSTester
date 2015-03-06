@@ -152,6 +152,8 @@ namespace CSTester
         private void btnReload_Click(object sender, RoutedEventArgs e)
         {
             if (!ScriptBootstrap.Started) return;
+            //clear output 
+            tbOutput.Clear();
 
             Task.Factory.StartNew(() =>
             {
