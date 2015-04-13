@@ -38,11 +38,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CS-Script.3.9.5.0\lib\net45\CSScriptLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="LF.Toolkit.Util">
-      <HintPath>..\packages\LF.Toolkit\1.0.1\LF.Toolkit.Util.dll</HintPath>
+    <Reference Include="LF.Toolkit.Util, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LF.Toolkit\1.0.3\LF.Toolkit.Util.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\LF.Toolkit\1.0.1\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>LF.Toolkit\1.0.3\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -143,10 +145,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LF.Toolkit\1.0.1\LF.Toolkit.Util.dll" />
-    <Resource Include="LF.Toolkit\1.0.1\LF.Toolkit.Util.XML" />
-    <Content Include="LF.Toolkit\1.0.1\log4net.dll" />
-    <Resource Include="LF.Toolkit\1.0.1\log4net.xml" />
+    <Content Include="LF.Toolkit\1.0.3\LF.Toolkit.Util.dll" />
+    <Resource Include="LF.Toolkit\1.0.3\LF.Toolkit.Util.XML" />
+    <Content Include="LF.Toolkit\1.0.3\log4net.dll" />
+    <Resource Include="LF.Toolkit\1.0.3\log4net.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
