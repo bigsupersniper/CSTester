@@ -34,8 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CSScriptLibrary">
-      <HintPath>..\packages\CS-Script.3.9.4.1\lib\net45\CSScriptLibrary.dll</HintPath>
+    <Reference Include="CSScriptLibrary, Version=3.9.5.0, Culture=neutral, PublicKeyToken=70fcc3d18c749033, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CS-Script.3.9.5.0\lib\net45\CSScriptLibrary.dll</HintPath>
     </Reference>
     <Reference Include="LF.Toolkit.Util">
       <HintPath>..\packages\LF.Toolkit\1.0.1\LF.Toolkit.Util.dll</HintPath>
@@ -43,8 +44,9 @@
     <Reference Include="log4net">
       <HintPath>..\packages\LF.Toolkit\1.0.1\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CSharp">
-      <HintPath>..\packages\CS-Script.3.9.4.1\lib\net45\Mono.CSharp.dll</HintPath>
+    <Reference Include="Mono.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CS-Script.3.9.5.0\lib\net45\Mono.CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
