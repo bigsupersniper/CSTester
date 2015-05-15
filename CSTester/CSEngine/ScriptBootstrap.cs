@@ -64,6 +64,7 @@ namespace CSTester.CSEngine
                                         catch (Exception e)
                                         {
                                             ex = new Exception("load scripts \"" + pl + "\" catch " + e.Message);
+                                            break;
                                         }
                                     }
                                 }
