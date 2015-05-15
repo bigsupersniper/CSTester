@@ -228,4 +228,62 @@ public class StringUtils : ScriptBase
             Functions.Add(func);
         }
     }
+
+    void DateTimeUtil()
+    {
+        var func = new Function();
+        func.Name = MethodBase.GetCurrentMethod().Name;
+        var json = new JObject();
+        func.Json = json;
+
+        if (Functions.Count(i => i.Name == func.Name) <= 0)
+        {
+            func.Invoker = () =>
+            {
+                try
+                {
+					var now = DateTime.Now;
+                    Console.Out.WriteLine("today ：" + now.Date + " -- " + now.Date.Add(new TimeSpan(23, 59, 59)));					
+					var startOfWeek = now.Date.AddDays(((int)now.DayOfWeek - 1) * -1);
+					var endOfWeek = startOfWeek.Date.Add(new TimeSpan(6, 23, 59, 59));
+                    Console.Out.WriteLine("weekend ：" + startOfWeek + " -- " + endOfWeek);
+					var startOfMonth = now.Date.AddDays(((int)now.Day - 1) * -1);
+					var endOfMonth = startOfMonth.Date.AddMonths(1).AddSeconds(-1);                    
+					Console.Out.WriteLine("month ：" + startOfMonth + " -- " + endOfMonth);
+                }
+                catch (Exception e)
+                {
+                    Console.Out.WriteLine(e);
+                }
+            };
+
+            Functions.Add(func);
+        }
+    }
+
+    void GuidUtil()
+    {
+        var func = new Function();
+        func.Name = MethodBase.GetCurrentMethod().Name;
+        var json = new JObject();
+        func.Json = json;
+
+        if (Functions.Count(i => i.Name == func.Name) <= 0)
+        {
+            func.Invoker = () =>
+            {
+                try
+                {               
+					Console.Out.WriteLine("guid ：" + Guid.NewGuid().ToString("N"));
+                }
+                catch (Exception e)
+                {
+                    Console.Out.WriteLine(e);
+                }
+            };
+
+            Functions.Add(func);
+        }
+    }	
+	
 }

@@ -57,7 +57,14 @@ namespace CSTester.CSEngine
                                     Scripts = new List<IScript>();
                                     foreach (var pl in config.Scripts)
                                     {
-                                        Scripts.Add(CSScript.Evaluator.LoadFile<IScript>(CS_DIR + "/" + pl));
+                                        try
+                                        {
+                                            Scripts.Add(CSScript.Evaluator.LoadFile<IScript>(CS_DIR + "/" + pl));
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            ex = new Exception("load scripts \"" + pl + "\" catch " + e.Message);
+                                        }
                                     }
                                 }
 

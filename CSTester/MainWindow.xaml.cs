@@ -36,7 +36,7 @@ namespace CSTester
             //重定向控制台输出
             Console.SetOut(new TextWriterProvider(tbOutput));
 
-            Task.Factory.StartNew(() =>
+            Task.Run(() =>
             {
                 Console.Out.WriteLine(DateTime.Now.ToString() + " --> 开始载入脚本");
 
