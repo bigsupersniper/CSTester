@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CSTester.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CSTester" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="CSTester" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="icon.ico">
     <Grid>
         <GroupBox Header="开始" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="122" Width="394">
             <Grid>
@@ -14,7 +14,7 @@
         <GroupBox Header="JSON参数" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" Height="210" Width="365">
             <Grid>
                 <TextBox x:Name="tbInput" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility ="Auto"
-                         HorizontalScrollBarVisibility="Auto" FontFamily="Courier New" FontSize="14"/>
+                         HorizontalScrollBarVisibility="Auto" FontSize="14"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="操作" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Height="80" Width="394">
@@ -28,7 +28,7 @@
         <GroupBox Header="输出" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="280" Width="772">
             <Grid>
                 <TextBox x:Name="tbOutput" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" HorizontalScrollBarVisibility="Auto"
-                         VerticalScrollBarVisibility ="Auto" FontFamily="Courier New" FontSize="14"/>
+                         VerticalScrollBarVisibility ="Auto" FontSize="14"/>
             </Grid>
         </GroupBox>
 

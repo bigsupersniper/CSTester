@@ -9,10 +9,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CSTester</RootNamespace>
     <AssemblyName>CSTester</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,18 +34,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CSScriptLibrary, Version=3.9.10.0, Culture=neutral, PublicKeyToken=70fcc3d18c749033, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CS-Script.3.9.10.0\lib\net45\CSScriptLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="LF.Toolkit.Util, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>LF.Toolkit\1.0.3\LF.Toolkit.Util.dll</HintPath>
+    <Reference Include="LF.Toolkit.Util">
+      <HintPath>LF.Toolkit\1.0.6\LF.Toolkit.Util.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>LF.Toolkit\1.0.3\log4net.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>LF.Toolkit\1.0.6\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -82,13 +84,37 @@
     <Compile Include="CSEngine\IScriptConfig.cs" />
     <Compile Include="CSEngine\ScriptBootstrap.cs" />
     <Compile Include="CSEngine\TextWriterProvider.cs" />
+    <None Include="Scripts\C2SController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\HFS.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\HFSv2.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\HttpJournalController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Preloads\SFHttpProvider.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\S2SController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\SFAuthorizeController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\SFSchoolController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Scripts\StringUtils.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Scripts\ConfigDebug.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Scripts\Preloads\AsyncHttpProvider.cs">
+    <None Include="Scripts\Preloads\JsonHttpProvider.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Scripts\Preloads\HttpConfig.cs">
@@ -101,9 +127,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Scripts\ScriptConfig.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\UserController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Page Include="MainWindow.xaml">
@@ -148,10 +171,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LF.Toolkit\1.0.4\LF.Toolkit.Util.dll" />
-    <Resource Include="LF.Toolkit\1.0.4\LF.Toolkit.Util.XML" />
-    <Content Include="LF.Toolkit\1.0.4\log4net.dll" />
-    <Resource Include="LF.Toolkit\1.0.4\log4net.xml" />
+    <Content Include="LF.Toolkit\1.0.6\LF.Toolkit.Util.dll" />
+    <Resource Include="LF.Toolkit\1.0.6\LF.Toolkit.Util.XML" />
+    <Content Include="LF.Toolkit\1.0.6\log4net.dll" />
+    <Resource Include="LF.Toolkit\1.0.6\log4net.xml" />
+    <Resource Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

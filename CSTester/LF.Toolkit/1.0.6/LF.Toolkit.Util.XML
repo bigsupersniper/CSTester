@@ -20,7 +20,7 @@
             <param name="key">密钥</param>
             <returns></returns>
         </member>
-        <!-- 对于成员“T:LF.Toolkit.Util.Crypto.BlowfishProvider”忽略有格式错误的 XML 注释 -->
+        <!-- Badly formed XML comment ignored for member "T:LF.Toolkit.Util.Crypto.BlowfishProvider" -->
         <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.#ctor(System.String)">
              Creates a new Blowfish object using the specified key (oversized
              password will be cut).
@@ -44,71 +44,7 @@
             destroys (clears) the encryption engine,
             after that the instance is not valid anymore
         </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.ByteArrayToLong(System.Byte[],System.Int32)">
-            gets bytes from an array into a long
-            @param buffer where to get the bytes
-            @param nStartIndex index from where to read the data
-            @return the 64bit integer
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongToByteArray(System.Int64,System.Byte[],System.Int32)">
-            converts a long o bytes which are put into a given array
-            @param lValue the 64bit integer to convert
-            @param buffer the target buffer
-            @param nStartIndex where to place the bytes in the buffer
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.IntArrayToLong(System.Int32[],System.Int32)">
-            converts values from an integer array to a long
-            @param buffer where to get the bytes
-            @param nStartIndex index from where to read the data
-            @return the 64bit integer
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongToIntArray(System.Int64,System.Int32[],System.Int32)">
-            converts a long to integers which are put into a given array
-            @param lValue the 64bit integer to convert
-            @param buffer the target buffer
-            @param nStartIndex where to place the bytes in the buffer
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.MakeLong(System.UInt32,System.UInt32)">
-            makes a long from two integers (treated unsigned)
-            @param nLo lower 32bits
-            @param nHi higher 32bits
-            @return the built long
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongLower32(System.Int64)">
-            gets the lower 32 bits of a long
-            @param lVal the long integer
-            @return lower 32 bits
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongHight32(System.Int64)">
-            gets the higher 32 bits of a long
-            @param lVal the long integer
-            @return higher 32 bits
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BytesToBinHex(System.Byte[],System.Int32,System.Int32)">
-            converts a byte array to a binhex string
-            @param data the byte array
-            @param nStartPos start index where to get the bytes
-            @param nNumOfBytes number of bytes to convert
-            @return the binhex string
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BinHexToBytes(System.String,System.Byte[],System.Int32,System.Int32,System.Int32)">
-            converts a binhex string back into a byte array (invalid codes will be skipped)
-            @param sBinHex binhex string
-            @param data the target array
-            @param nSrcPos from which character in the string the conversion should begin,
-                           remember that (nSrcPos modulo 2) should equals 0 normally
-            @param nDstPos to store the bytes from which position in the array
-            @param nNumOfBytes number of bytes to extract
-            @return number of extracted bytes
-        </member>
-        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.ByteArrayToUNCString(System.Byte[],System.Int32,System.Int32)">
-            converts a byte array into an UNICODE string
-            @param data the byte array
-            @param nStartPos where to begin the conversion
-            @param nNumOfBytes number of bytes to handle
-            @return the string
-        </member>
-        <!-- 对于成员“T:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB”忽略有格式错误的 XML 注释 -->
+        <!-- Badly formed XML comment ignored for member "T:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB" -->
         <member name="F:LF.Toolkit.Util.Crypto.BlowfishProvider.BlowfishECB.MAXKEYLENGTH">
             maximum possible key length 
         </member>
@@ -278,6 +214,70 @@
             decrypts a long buffer to itself
             @param buffer buffer to decrypt
         </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.ByteArrayToLong(System.Byte[],System.Int32)">
+            gets bytes from an array into a long
+            @param buffer where to get the bytes
+            @param nStartIndex index from where to read the data
+            @return the 64bit integer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongToByteArray(System.Int64,System.Byte[],System.Int32)">
+            converts a long o bytes which are put into a given array
+            @param lValue the 64bit integer to convert
+            @param buffer the target buffer
+            @param nStartIndex where to place the bytes in the buffer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.IntArrayToLong(System.Int32[],System.Int32)">
+            converts values from an integer array to a long
+            @param buffer where to get the bytes
+            @param nStartIndex index from where to read the data
+            @return the 64bit integer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongToIntArray(System.Int64,System.Int32[],System.Int32)">
+            converts a long to integers which are put into a given array
+            @param lValue the 64bit integer to convert
+            @param buffer the target buffer
+            @param nStartIndex where to place the bytes in the buffer
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.MakeLong(System.UInt32,System.UInt32)">
+            makes a long from two integers (treated unsigned)
+            @param nLo lower 32bits
+            @param nHi higher 32bits
+            @return the built long
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongLower32(System.Int64)">
+            gets the lower 32 bits of a long
+            @param lVal the long integer
+            @return lower 32 bits
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.LongHight32(System.Int64)">
+            gets the higher 32 bits of a long
+            @param lVal the long integer
+            @return higher 32 bits
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BytesToBinHex(System.Byte[],System.Int32,System.Int32)">
+            converts a byte array to a binhex string
+            @param data the byte array
+            @param nStartPos start index where to get the bytes
+            @param nNumOfBytes number of bytes to convert
+            @return the binhex string
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.BinHexToBytes(System.String,System.Byte[],System.Int32,System.Int32,System.Int32)">
+            converts a binhex string back into a byte array (invalid codes will be skipped)
+            @param sBinHex binhex string
+            @param data the target array
+            @param nSrcPos from which character in the string the conversion should begin,
+                           remember that (nSrcPos modulo 2) should equals 0 normally
+            @param nDstPos to store the bytes from which position in the array
+            @param nNumOfBytes number of bytes to extract
+            @return number of extracted bytes
+        </member>
+        <member name="M:LF.Toolkit.Util.Crypto.BlowfishProvider.ByteArrayToUNCString(System.Byte[],System.Int32,System.Int32)">
+            converts a byte array into an UNICODE string
+            @param data the byte array
+            @param nStartPos where to begin the conversion
+            @param nNumOfBytes number of bytes to handle
+            @return the string
+        </member>
         <member name="T:LF.Toolkit.Util.Crypto.MD5Provider">
             <summary>
             表示Md5 帮助类
@@ -366,128 +366,6 @@
             <param name="str">要计算其哈希代码的输入</param>
             <param name="format">一个数值格式字符串</param>
             <returns></returns>
-        </member>
-        <member name="T:LF.Toolkit.Util.UploadFileStream">
-            <summary>
-            上传文件类
-            </summary>
-        </member>
-        <member name="T:LF.Toolkit.Util.HttpConst">
-            <summary>
-            HTTP相关常量类
-            </summary>
-        </member>
-        <member name="F:LF.Toolkit.Util.HttpConst.CONTENTTYPE_URLENCODED">
-            <summary>
-            HTTP POST FROM x-www-form-urlencoded
-            </summary>
-        </member>
-        <member name="F:LF.Toolkit.Util.HttpConst.CONTENTTYPE_FORMDATA">
-            <summary>
-            HTTP POST FROM multipart/form-data
-            </summary>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.SerializeQueryString(System.Object)">
-            <summary>
-            序列化参数
-            </summary>
-            <param name="parameters"></param>
-            <returns></returns>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.ProcessCallback(System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            异步响应处理
-            </summary>
-            <param name="successCallback"></param>
-            <param name="failCallback"></param>
-            <returns></returns>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.BuildRequest(System.String,System.String,System.String,System.Object,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            生成请求
-            </summary>
-            <param name="contentType"></param>
-            <param name="method"></param>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="headers"></param>
-            <param name="successCallback"></param>
-            <param name="failCallback"></param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Get(System.String,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Get
-            </summary>
-            <param name="url"></param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Get(System.String,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Get
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Get(System.String,System.Object,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Get
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="headers">http headers对象</param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Post(System.String,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Post
-            </summary>
-            <param name="url"></param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Post(System.String,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Post
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Post(System.String,System.Object,System.Object,System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Post
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="headers">http headers对象</param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Upload(System.String,System.Object,LF.Toolkit.Util.UploadFileStream[],System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Upload
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="files"></param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
-        </member>
-        <member name="M:LF.Toolkit.Util.HttpProvider.Upload(System.String,System.Object,System.Object,LF.Toolkit.Util.UploadFileStream[],System.Action{System.String},System.Action{System.Net.WebException})">
-            <summary>
-            Upload
-            </summary>
-            <param name="url"></param>
-            <param name="parameters"></param>
-            <param name="headers">http headers对象</param>
-            <param name="files"></param>
-            <param name="successCallback">成功回发</param>
-            <param name="failCallback">失败回发</param>
         </member>
         <member name="M:LF.Toolkit.Util.StringProvider.CreateRandomAlphanumeric(System.Int32)">
             <summary>
