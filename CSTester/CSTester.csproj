@@ -42,11 +42,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\CS-Script.3.9.10.0\lib\net45\CSScriptLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="LF.Toolkit.Util">
-      <HintPath>LF.Toolkit\1.0.6\LF.Toolkit.Util.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>LF.Toolkit\1.0.6\log4net.dll</HintPath>
+    <Reference Include="LF.Toolkit.Common">
+      <HintPath>LF.Toolkit\LF.Toolkit.Common.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CSharp, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -84,6 +81,21 @@
     <Compile Include="CSEngine\IScriptConfig.cs" />
     <Compile Include="CSEngine\ScriptBootstrap.cs" />
     <Compile Include="CSEngine\TextWriterProvider.cs" />
+    <None Include="Scripts\Preloads\BlowfishCBC.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Preloads\BlowfishECB.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Preloads\Blowfish.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\CryptoDebug.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Preloads\AsyncHttpProvider.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Scripts\C2SController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -108,7 +120,7 @@
     <None Include="Scripts\SFSchoolController.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Scripts\StringUtils.cs">
+    <None Include="Scripts\StringDebug.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Scripts\ConfigDebug.cs">
@@ -171,10 +183,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LF.Toolkit\1.0.6\LF.Toolkit.Util.dll" />
-    <Resource Include="LF.Toolkit\1.0.6\LF.Toolkit.Util.XML" />
-    <Content Include="LF.Toolkit\1.0.6\log4net.dll" />
-    <Resource Include="LF.Toolkit\1.0.6\log4net.xml" />
+    <Content Include="LF.Toolkit\LF.Toolkit.Common.dll" />
     <Resource Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

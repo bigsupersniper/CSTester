@@ -26,7 +26,7 @@ public class ScriptConfig : IScriptConfig
             "System.Net.Http",
 			"System.Net.Http.Formatting",
             "Newtonsoft.Json",
-            "LF.Toolkit.Util",
+			"LF.Toolkit.Common",
 			"System.Drawing"
 		};
 
@@ -34,18 +34,15 @@ public class ScriptConfig : IScriptConfig
 		{
             "Preloads/Function.cs",
             "Preloads/ScriptBase.cs",
-            "Preloads/HttpConfig.cs",
-            "Preloads/AsyncHttpProvider.cs"
+            "Preloads/BlowfishECB.cs",
+            "Preloads/BlowfishCBC.cs",
+            "Preloads/Blowfish.cs",
 		};
 
 		Scripts = new string[]
 		{
-            "StringUtils.cs",
-			"C2SController.cs",
-			"S2SController.cs",
-            "ConfigDebug.cs",
-			"HFS.cs",
-			"HFSv2.cs"
+            "StringDebug.cs",
+			"CryptoDebug.cs"
         };
     }
 }

@@ -48,7 +48,14 @@ namespace CSTester.CSEngine
                                 {
                                     foreach (var pl in config.Preloads)
                                     {
-                                        CSScript.Evaluator.LoadFile(CS_DIR + "/" + pl);
+                                        try
+                                        {
+                                            CSScript.Evaluator.LoadFile(CS_DIR + "/" + pl);
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            throw new Exception("Load Preloads \"" + pl + "\" Catch " + e.Message);
+                                        }
                                     }
                                 }
                                 //加载分析类
@@ -63,7 +70,7 @@ namespace CSTester.CSEngine
                                         }
                                         catch (Exception e)
                                         {
-                                            throw new Exception("load scripts \"" + pl + "\" catch " + e.Message);
+                                            throw new Exception("Load Scripts \"" + pl + "\" Catch " + e.Message);
                                         }
                                     }
                                 }
