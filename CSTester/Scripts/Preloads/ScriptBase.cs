@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using System.Collections.Generic;
+using CSTester.CSEngine;
 
 public class ScriptBase : IScript
 {
@@ -35,7 +36,7 @@ public class ScriptBase : IScript
 
         if (script == null)
         {
-            Console.Out.WriteLine("\r" + DateTime.Now.ToString() + " --> script " + scriptName + " not found !");
+            TextPrinter.WriteLine("Colud not found Script " + scriptName + "!");
         }
 
         return script;
@@ -52,7 +53,7 @@ public class ScriptBase : IScript
 
         if (func == null)
         {
-            Console.Out.WriteLine("\r" + DateTime.Now.ToString() + " --> function " + scriptName + " not found !");
+            TextPrinter.WriteLine("Could not found function " + scriptName + "!");
         }
 
         return func;

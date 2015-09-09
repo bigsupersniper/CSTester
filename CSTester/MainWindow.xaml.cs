@@ -38,8 +38,7 @@ namespace CSTester
 
             Task.Run(() =>
             {
-                Console.Out.WriteLine(DateTime.Now.ToString() + " --> 开始载入脚本");
-
+                TextPrinter.WriteLine("Begin Initialize Executable Scripts");
                 btnReload.Dispatcher.Invoke(() => btnReload.IsEnabled = false);
 
                 try
@@ -54,7 +53,7 @@ namespace CSTester
                 }
                 finally
                 {
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " --> 脚本载入完成");
+                    TextPrinter.WriteLine("End Initialize Executable Scripts");
                     btnRestart.Dispatcher.Invoke(() => btnRestart.IsEnabled = true);
                 }
             });
@@ -152,12 +151,12 @@ namespace CSTester
         private void btnReload_Click(object sender, RoutedEventArgs e)
         {
             if (!ScriptBootstrap.Started) return;
-            //clear output 
+
             tbOutput.Clear();
 
             Task.Factory.StartNew(() =>
             {
-                Console.Out.WriteLine(DateTime.Now.ToString() + " --> 开始重新载入脚本");
+                TextPrinter.WriteLine("Begin Reload Executable Scripts");
 
                 try
                 {
@@ -166,11 +165,11 @@ namespace CSTester
                 }
                 catch (Exception ex)
                 {
-                    Console.Out.WriteLine(ex);
+                    TextPrinter.WriteLine(ex);
                 }
                 finally
                 {
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " --> 重新载入脚本完成");
+                    TextPrinter.WriteLine("End Reload Executable Scripts");
                 }
             });
         }

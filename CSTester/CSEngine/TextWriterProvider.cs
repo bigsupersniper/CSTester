@@ -59,7 +59,7 @@ namespace CSTester.CSEngine
         {
             Owner.Dispatcher.Invoke(() =>
             {
-                Owner.AppendText("\r");
+                Owner.AppendText(Environment.NewLine);
                 Owner.ScrollToEnd();
             });
         }
@@ -70,7 +70,7 @@ namespace CSTester.CSEngine
 
             Owner.Dispatcher.Invoke(() =>
             {
-                Owner.AppendText(value.ToString() + "\r");
+                Owner.AppendText(value.ToString() + Environment.NewLine);
                 Owner.ScrollToEnd();
             });
         }
@@ -81,7 +81,7 @@ namespace CSTester.CSEngine
 
             Owner.Dispatcher.Invoke(() =>
             {
-                Owner.AppendText(value.ToString() + "\r");
+                Owner.AppendText(value.ToString() + Environment.NewLine);
                 Owner.ScrollToEnd();
             });
         }
@@ -92,7 +92,7 @@ namespace CSTester.CSEngine
 
             await Owner.Dispatcher.InvokeAsync(() =>
             {
-                Owner.AppendText(value.ToString() + "\r");
+                Owner.AppendText(value.ToString() + Environment.NewLine);
                 Owner.ScrollToEnd();
             });
         }

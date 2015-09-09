@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using CSTester.CSEngine;
 
 public class CryptoDebug : ScriptBase
 {
@@ -34,12 +35,12 @@ public class CryptoDebug : ScriptBase
                     if (!Enum.TryParse<HashAlgorithmType>(type, out algType)) throw new Exception("algType值无效");
                     if (string.IsNullOrEmpty(str)) throw new Exception("str不能为空");
 
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " -->  [" + algType + "] " + func.Name
+                    TextPrinter.WriteLine("[" + algType + "] " + func.Name
                         + " <output> " + HashAlgorithmProvider.ComputeHash(algType, str, lowerCase));
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 
@@ -76,13 +77,13 @@ public class CryptoDebug : ScriptBase
                         throw new Exception("paddingMode值无效");
                     if (string.IsNullOrEmpty(str)) throw new Exception("str不能为空");
 
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " -->  [Aes/" + cipherMode + "/" + paddingMode + "] "
+                    TextPrinter.WriteLine("[Aes/" + cipherMode + "/" + paddingMode + "] "
                         + func.Name + " <output> " + SymmetricAlgorithmProvider.EncryptToBase64(SymmetricAlgorithmType.Aes
                         , str, key, cipherMode, paddingMode));
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 
@@ -119,13 +120,13 @@ public class CryptoDebug : ScriptBase
                         throw new Exception("paddingMode值无效");
                     if (string.IsNullOrEmpty(str)) throw new Exception("str不能为空");
 
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " -->  [Aes/" + cipherMode + "/" + paddingMode + "] "
+                    TextPrinter.WriteLine("[Aes/" + cipherMode + "/" + paddingMode + "] "
                         + func.Name + " <output> " + SymmetricAlgorithmProvider.DecryptFromBase64(SymmetricAlgorithmType.Aes
                         , Encoding.UTF8, str, key, cipherMode, paddingMode));
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 
@@ -154,12 +155,11 @@ public class CryptoDebug : ScriptBase
                     var bf = new Blowfish(key);
                     bf.Encrypt_CBC(str);
 
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " --> " + func.Name + " <output> "
-                        + bf.Encrypt_CBC(str));
+                    TextPrinter.WriteLine(func.Name + " <output> " + bf.Encrypt_CBC(str));
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 
@@ -187,12 +187,11 @@ public class CryptoDebug : ScriptBase
                     var bf = new Blowfish(key);
                     bf.Encrypt_CBC(str);
 
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " --> " + func.Name + " <output> "
-                        + bf.Decrypt_CBC(str));
+                    TextPrinter.WriteLine(func.Name + " <output> " + bf.Decrypt_CBC(str));
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 

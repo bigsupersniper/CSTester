@@ -1,4 +1,5 @@
-﻿using LF.Toolkit.Common;
+﻿using CSTester.CSEngine;
+using LF.Toolkit.Common;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -44,12 +45,11 @@ public class StringDebug : ScriptBase
                         default:
                             break;
                     }
-
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " -->  " + func.Name + " <output> " + str);
+                    TextPrinter.WriteLine(func.Name + " <output> " + str);
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 
@@ -100,11 +100,11 @@ public class StringDebug : ScriptBase
                         default:
                             break;
                     }
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " -->  " + func.Name + " <output> " + str);
+                    TextPrinter.WriteLine(func.Name + " <output> " + str);
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 
@@ -125,11 +125,11 @@ public class StringDebug : ScriptBase
             {
                 try
                 {
-                    Console.Out.WriteLine(DateTime.Now.ToString() + " -->  " + func.Name + " <output> " + Guid.NewGuid().ToString("N"));
+                    TextPrinter.WriteLine(func.Name + " <output> " + Guid.NewGuid().ToString("N"));
                 }
                 catch (Exception e)
                 {
-                    Console.Out.WriteLine(e);
+                    TextPrinter.WriteLine(e);
                 }
             };
 

@@ -34,15 +34,26 @@ public class ScriptConfig : IScriptConfig
 		{
             "Preloads/Function.cs",
             "Preloads/ScriptBase.cs",
+            "Preloads/HttpConfig.cs",
             "Preloads/BlowfishECB.cs",
             "Preloads/BlowfishCBC.cs",
             "Preloads/Blowfish.cs",
+            "Preloads/JsonHttpProvider.cs",
+			"Preloads/SFHttpProvider.cs"
 		};
 
 		Scripts = new string[]
 		{
             "StringDebug.cs",
-			"CryptoDebug.cs"
+			"CryptoDebug.cs",
+			"ConfigDebug.cs",
+			"C2SController.cs",
+			"S2SController.cs",
+			"HttpJournalController.cs",
+			"HFS.cs",
+			"HFSv2.cs",
+			"SFAuthorizeController.cs",
+			"SFSchoolController.cs"
         };
     }
 }

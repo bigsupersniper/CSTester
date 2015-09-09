@@ -80,6 +80,7 @@
     <Compile Include="CSEngine\IScript.cs" />
     <Compile Include="CSEngine\IScriptConfig.cs" />
     <Compile Include="CSEngine\ScriptBootstrap.cs" />
+    <Compile Include="CSEngine\TextPrinter.cs" />
     <Compile Include="CSEngine\TextWriterProvider.cs" />
     <None Include="Scripts\Preloads\BlowfishCBC.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -91,9 +92,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Scripts\CryptoDebug.cs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Preloads\AsyncHttpProvider.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Scripts\C2SController.cs">

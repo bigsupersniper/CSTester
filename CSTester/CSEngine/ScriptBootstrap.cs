@@ -54,7 +54,7 @@ namespace CSTester.CSEngine
                                         }
                                         catch (Exception e)
                                         {
-                                            throw new Exception("Load Preloads \"" + pl + "\" Catch " + e.Message);
+                                            throw new Exception("LoadFile \"" + pl + "\" Catch " + e);
                                         }
                                     }
                                 }
@@ -70,7 +70,7 @@ namespace CSTester.CSEngine
                                         }
                                         catch (Exception e)
                                         {
-                                            throw new Exception("Load Scripts \"" + pl + "\" Catch " + e.Message);
+                                            throw new Exception("LoadFile \"" + pl + "\" Catch " + e);
                                         }
                                     }
                                 }
@@ -79,12 +79,12 @@ namespace CSTester.CSEngine
                             }
                             else
                             {
-                                throw new Exception("未找到脚本配置文件!!!");
+                                throw new Exception("Colud not found 'ScriptConfig.cs' file");
                             }
                         }
                         else
                         {
-                            throw new Exception("未找到脚本目录!!!");
+                            throw new Exception("Could not found 'Scripts' folder");
                         }
                     }
                     catch (Exception e)
@@ -104,19 +104,12 @@ namespace CSTester.CSEngine
 
         public static void Restart()
         {
-            try
+            if (Started)
             {
-                if (Started)
-                {
-                    CSScript.Evaluator.Reset(true);
-                }
+                CSScript.Evaluator.Reset(true);
+            }
 
-                Load(true);
-            }
-            catch
-            {
-                throw;
-            }
+            Load(true);
         }
     }
 }
