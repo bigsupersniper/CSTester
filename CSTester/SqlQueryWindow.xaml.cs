@@ -43,12 +43,13 @@ namespace CSTester
                 foreach (var key in dict.Keys)
                 {
                     var column = new DataGridTextColumn();
-                    column.Header = " " + key;
+                    column.Header = key;
                     column.Binding = new Binding(key);
                     if (dict[key] is DateTime)
                     {
                         column.Binding.StringFormat = "yyyy-MM-dd HH:mm:ss.fff";
                     }
+                    column.Binding.TargetNullValue = "NULL";
                     column.IsReadOnly = true;
                     listGrid.Columns.Add(column);
                 }
