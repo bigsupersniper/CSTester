@@ -6,7 +6,7 @@ using CSTester.CSEngine;
 
 public class SqlQueryAnalyzer : ScriptBase
 {
-	string ConnectionString = "Data Source=(LocalDB)\MSSQLLocalDB";
+	string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB";
 	
 	void OpenDialog()
 	{
