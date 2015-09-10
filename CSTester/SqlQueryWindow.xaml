@@ -1,0 +1,29 @@
+﻿<Window x:Class="CSTester.SqlQueryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSTester"
+        mc:Ignorable="d"
+        Title="Sql查询分析窗口" Height="550" Width="800" WindowStartupLocation="CenterScreen" Icon="sql.ico">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="查询分析（F5执行）" Margin="8" VerticalAlignment="Top" Height="150">
+            <TextBox x:Name="tbSql" TextWrapping="Wrap" Margin="3" Text="" AcceptsReturn="True"  
+                    TextBlock.LineHeight="18" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="14" PreviewKeyDown="tbSql_PreviewKeyDown" FontFamily="NSimSun"/>
+        </GroupBox>
+        <GroupBox x:Name="gpResult" Header="查询结果" Margin="8,168,8,0" VerticalAlignment="Top" Visibility="Collapsed">
+            <Grid>
+                <DataGrid  x:Name="listGrid" Margin="3" FontFamily="NSimSun" Foreground="Black" FontSize="14" 
+                           RowHeight="21" RowHeaderWidth="30" AutoGenerateColumns="False" GridLinesVisibility="None" Visibility="Collapsed"
+                           SelectionUnit="Cell" CanUserResizeRows="False" VerticalContentAlignment="Center" >
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+                <Label x:Name="lbResult" Margin="3" FontFamily="NSimSun" Foreground="Black" FontSize="14" Visibility="Collapsed"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

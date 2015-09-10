@@ -27,7 +27,9 @@ public class ScriptConfig : IScriptConfig
 			"System.Net.Http.Formatting",
             "Newtonsoft.Json",
 			"LF.Toolkit.Common",
-			"System.Drawing"
+			"System.Drawing",
+			"System.Data",
+			"Dapper"
 		};
 
 		Preloads = new string[]
@@ -38,22 +40,15 @@ public class ScriptConfig : IScriptConfig
             "Preloads/BlowfishECB.cs",
             "Preloads/BlowfishCBC.cs",
             "Preloads/Blowfish.cs",
-            "Preloads/JsonHttpProvider.cs",
-			"Preloads/SFHttpProvider.cs"
-		};
+            "Preloads/SqlQuery.cs"
+        };
 
 		Scripts = new string[]
 		{
             "StringDebug.cs",
 			"CryptoDebug.cs",
 			"ConfigDebug.cs",
-			"C2SController.cs",
-			"S2SController.cs",
-			"HttpJournalController.cs",
-			"HFS.cs",
-			"HFSv2.cs",
-			"SFAuthorizeController.cs",
-			"SFSchoolController.cs"
+            "SqlQueryAnalyzer.cs"
         };
     }
 }

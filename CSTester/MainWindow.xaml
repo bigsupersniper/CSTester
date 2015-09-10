@@ -1,7 +1,7 @@
 ﻿<Window x:Class="CSTester.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CSTester" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="icon.ico">
+        Title="CSTester" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="icon.ico" KeyDown="Window_KeyDown">
     <Grid>
         <GroupBox Header="开始" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="122" Width="394">
             <Grid>

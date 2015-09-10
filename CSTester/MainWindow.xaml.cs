@@ -194,5 +194,12 @@ namespace CSTester
             thisMudule.Start();
         }
 
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F5)
+            {
+                btnExec_Click(this, new RoutedEventArgs());
+            }
+        }
     }
 }
