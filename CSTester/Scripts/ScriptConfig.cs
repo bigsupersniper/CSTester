@@ -36,7 +36,6 @@ public class ScriptConfig : IScriptConfig
 		{
             "Preloads/Function.cs",
             "Preloads/ScriptBase.cs",
-            "Preloads/HttpConfig.cs",
             "Preloads/BlowfishECB.cs",
             "Preloads/BlowfishCBC.cs",
             "Preloads/Blowfish.cs",
@@ -46,9 +45,8 @@ public class ScriptConfig : IScriptConfig
 		Scripts = new string[]
 		{
             "StringDebug.cs",
-			"CryptoDebug.cs",
-			"ConfigDebug.cs",
-            "SqlQueryAnalyzer.cs"
+            "CSEngineDialog.cs",
+            "CryptoDebug.cs",
         };
     }
 }

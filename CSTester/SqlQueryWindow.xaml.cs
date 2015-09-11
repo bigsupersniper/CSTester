@@ -22,12 +22,15 @@ namespace CSTester
     /// </summary>
     public partial class SqlQueryWindow : Window
     {
+        public static bool Opened { get; private set; }
+
         ISqlQuery query;
         bool jobDone = true;
 
         public SqlQueryWindow(ISqlQuery query)
         {
             InitializeComponent();
+            Opened = true;
             this.query = query;
         }
 
@@ -111,6 +114,11 @@ namespace CSTester
                 }
                 jobDone = true;
             }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Opened = false;
         }
     }
 }

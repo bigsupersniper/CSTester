@@ -1,0 +1,19 @@
+﻿<Window x:Class="CSTester.ImageView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSTester"
+        mc:Ignorable="d"
+        Title="图片浏览" WindowStartupLocation="CenterScreen" Icon="image.ico" Height="550" Width="800" Closed="Window_Closed">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="图片地址（Enter）" Height="54" VerticalAlignment="Top" Margin="5">
+            <TextBox x:Name="tbUrl" VerticalContentAlignment="Center" Height="23" Margin="3" TextWrapping="Wrap" 
+                     Text="" VerticalAlignment="Top" KeyDown="tbUrl_KeyDown"/>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="图片详情" Margin="5,65,5,10" VerticalAlignment="Top">
+            <Image x:Name="image" HorizontalAlignment="Center" Margin="5" Stretch="None" 
+                   VerticalAlignment="Center" MouseMove="image_MouseMove" />
+        </GroupBox>
+    </Grid>
+</Window>

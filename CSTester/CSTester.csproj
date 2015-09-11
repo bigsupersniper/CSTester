@@ -61,6 +61,7 @@
     <Reference Include="System.Data">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -89,10 +90,13 @@
     <Compile Include="CSEngine\ScriptBootstrap.cs" />
     <Compile Include="CSEngine\TextPrinter.cs" />
     <Compile Include="CSEngine\TextWriterProvider.cs" />
-    <None Include="Scripts\SqlQueryAnalyzer.cs">
+    <Compile Include="ImageView.xaml.cs">
+      <DependentUpon>ImageView.xaml</DependentUpon>
+    </Compile>
+    <None Include="Scripts\Preloads\SqlQuery.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Scripts\Preloads\SqlQuery.cs">
+    <None Include="Scripts\CSEngineDialog.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Compile Include="SqlQueryWindow.xaml.cs">
@@ -171,6 +175,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ImageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -201,6 +209,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+    <Resource Include="image.ico" />
     <Content Include="LF.Toolkit\LF.Toolkit.Common.dll" />
     <Resource Include="sql.ico" />
     <Resource Include="icon.ico" />
