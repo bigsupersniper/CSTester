@@ -147,7 +147,7 @@ namespace CSTester
 
                 try
                 {
-                    scriptBootstrap = ScriptLoader.CreateBootstrap();
+                    scriptBootstrap = ScriptLoader.CreateBootstrap(true);
                     BindComboBox();
                 }
                 catch (Exception ex)

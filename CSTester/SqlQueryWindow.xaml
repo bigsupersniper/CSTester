@@ -9,7 +9,8 @@
     <Grid>
         <GroupBox x:Name="groupBox" Header="查询分析（F5）" Margin="8" VerticalAlignment="Top" Height="150">
             <TextBox x:Name="tbSql" TextWrapping="Wrap" Margin="3" Text="" AcceptsReturn="True"  
-                    TextBlock.LineHeight="18" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="14" PreviewKeyDown="tbSql_PreviewKeyDown" FontFamily="NSimSun"/>
+                    TextBlock.LineHeight="18" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="14" 
+                     PreviewKeyDown="tbSql_PreviewKeyDown" FontFamily="NSimSun" Background="WhiteSmoke"/>
         </GroupBox>
         <GroupBox x:Name="gpResult" Header="查询结果" Margin="8,168,8,0" VerticalAlignment="Top" Visibility="Collapsed">
             <Grid>
