@@ -2,21 +2,11 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CSTester
 {
@@ -31,6 +21,8 @@ namespace CSTester
             InitializeRequire();
         }
 
+        IScriptBootstrap scriptBootstrap;
+
         void InitializeRequire()
         {
             //重定向控制台输出
@@ -38,12 +30,12 @@ namespace CSTester
 
             Task.Run(() =>
             {
-                TextPrinter.WriteLine("Begin Initialize Executable Scripts");
+                TextPrinter.WriteLine("开始载入脚本");
                 btnReload.Dispatcher.Invoke(() => btnReload.IsEnabled = false);
 
                 try
                 {
-                    ScriptBootstrap.Start();
+                    scriptBootstrap = ScriptLoader.CreateBootstrap();
                     BindComboBox();
                     btnReload.Dispatcher.Invoke(() => btnReload.IsEnabled = true);
                 }
@@ -53,7 +45,7 @@ namespace CSTester
                 }
                 finally
                 {
-                    TextPrinter.WriteLine("End Initialize Executable Scripts");
+                    TextPrinter.WriteLine("脚本载入完成");
                     btnRestart.Dispatcher.Invoke(() => btnRestart.IsEnabled = true);
                 }
             });
@@ -61,14 +53,14 @@ namespace CSTester
 
         void BindComboBox()
         {
-            if (ScriptBootstrap.Scripts != null)
+            if (scriptBootstrap.ScriptContexts != null)
             {
                 cbbScriptList.Dispatcher.Invoke(() =>
                 {
                     cbbScriptList.Items.Clear();
-                    cbbScriptList.Items.Add(new { Name = "=========请选择========" });
+                    cbbScriptList.Items.Add(new { ScriptName = "=========请选择========" });
 
-                    foreach (var item in ScriptBootstrap.Scripts)
+                    foreach (var item in scriptBootstrap.ScriptContexts)
                     {
                         cbbScriptList.Items.Add(item);
                     }
@@ -82,13 +74,12 @@ namespace CSTester
         {
             if (cbbScriptList.SelectedIndex > 0)
             {
-                var items = cbbScriptList.SelectedItem as IScript;
+                var items = cbbScriptList.SelectedItem as IScriptContext;
                 cbbFunctionList.Items.Clear();
-                cbbFunctionList.Items.Add(new { Name = "=========请选择========" });
-
-                if (items.Functions != null)
+                cbbFunctionList.Items.Add(new { MethodName = "=========请选择========" });
+                if (items.MethodContexts != null)
                 {
-                    foreach (var func in items.Functions)
+                    foreach (var func in items.MethodContexts)
                     {
                         cbbFunctionList.Items.Add(func);
                     }
@@ -97,7 +88,7 @@ namespace CSTester
             else
             {
                 cbbFunctionList.Items.Clear();
-                cbbFunctionList.Items.Add(new { Name = "=========请选择========" });
+                cbbFunctionList.Items.Add(new { MethodName = "=========请选择========" });
             }
 
             cbbFunctionList.SelectedIndex = 0;
@@ -109,10 +100,10 @@ namespace CSTester
             {
                 btnExec.IsEnabled = true;
 
-                var func = cbbFunctionList.SelectedItem as IFunction;
-                if (func.Json != null)
+                var method = cbbFunctionList.SelectedItem as IMethodContext;
+                if (method.Parameters != null)
                 {
-                    tbInput.Text = func.Json.ToString();
+                    tbInput.Text = method.Parameters.ToString();
                 }
             }
             else
@@ -125,21 +116,19 @@ namespace CSTester
         private void btnExec_Click(object sender, RoutedEventArgs e)
         {
             if (cbbFunctionList.SelectedIndex <= 0) return;
-            if (string.IsNullOrEmpty(tbInput.Text)) return;
 
             try
             {
-                var func = cbbFunctionList.SelectedItem as IFunction;
-                if (func.Invoker != null)
+                var method = cbbFunctionList.SelectedItem as IMethodContext;
+                if (method != null)
                 {
                     var json = JsonConvert.DeserializeObject<JObject>(tbInput.Text);
                     if (json == null)
                     {
                         json = new JObject();
                     }
-
-                    func.Json = json;
-                    func.Invoker();
+                    method.Parameters = json;
+                    method.Execute();
                 }
             }
             catch (Exception ex)
@@ -150,17 +139,15 @@ namespace CSTester
 
         private void btnReload_Click(object sender, RoutedEventArgs e)
         {
-            if (!ScriptBootstrap.Started) return;
-
             tbOutput.Clear();
 
             Task.Factory.StartNew(() =>
             {
-                TextPrinter.WriteLine("Begin Reload Executable Scripts");
+                TextPrinter.WriteLine("开始重新载入脚本");
 
                 try
                 {
-                    ScriptBootstrap.Restart();
+                    scriptBootstrap = ScriptLoader.CreateBootstrap();
                     BindComboBox();
                 }
                 catch (Exception ex)
@@ -169,7 +156,7 @@ namespace CSTester
                 }
                 finally
                 {
-                    TextPrinter.WriteLine("End Reload Executable Scripts");
+                    TextPrinter.WriteLine("重新载入脚本完成");
                 }
             });
         }

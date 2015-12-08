@@ -5,8 +5,8 @@
     <Grid>
         <GroupBox Header="开始" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="122" Width="394">
             <Grid>
-                <ComboBox x:Name="cbbScriptList" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="108,13,0,0" VerticalAlignment="Top" Width="239" SelectionChanged="cbbScriptList_SelectionChanged" FontSize="14"/>
-                <ComboBox x:Name="cbbFunctionList" DisplayMemberPath="Name" HorizontalAlignment="Left" Margin="108,55,0,0" VerticalAlignment="Top" Width="240" SelectionChanged="cbbFunctionList_SelectionChanged" FontSize="14"/>
+                <ComboBox x:Name="cbbScriptList" DisplayMemberPath="ScriptName" HorizontalAlignment="Left" Margin="108,13,0,0" VerticalAlignment="Top" Width="239" SelectionChanged="cbbScriptList_SelectionChanged" FontSize="14"/>
+                <ComboBox x:Name="cbbFunctionList" DisplayMemberPath="MethodName" HorizontalAlignment="Left" Margin="108,55,0,0" VerticalAlignment="Top" Width="240" SelectionChanged="cbbFunctionList_SelectionChanged" FontSize="14"/>
                 <Label Content="脚本列表：" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="94" FontSize="14"/>
                 <Label Content="方法列表：" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="0,53,0,0" VerticalAlignment="Top" Width="94" FontSize="14"/>
             </Grid>
@@ -14,7 +14,7 @@
         <GroupBox Header="JSON参数" HorizontalAlignment="Left" Margin="417,10,0,0" VerticalAlignment="Top" Height="210" Width="365">
             <Grid>
                 <TextBox x:Name="tbInput" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility ="Auto"
-                         HorizontalScrollBarVisibility="Auto" FontSize="14"/>
+                         HorizontalScrollBarVisibility="Auto" FontSize="14" FontFamily="Courier New" />
             </Grid>
         </GroupBox>
         <GroupBox Header="操作" HorizontalAlignment="Left" Margin="10,137,0,0" VerticalAlignment="Top" Height="80" Width="394">
@@ -28,7 +28,7 @@
         <GroupBox Header="输出" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Height="280" Width="772">
             <Grid>
                 <TextBox x:Name="tbOutput" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" HorizontalScrollBarVisibility="Auto"
-                         VerticalScrollBarVisibility ="Auto" FontSize="14"/>
+                         VerticalScrollBarVisibility ="Auto" FontSize="14" FontFamily="Courier New"/>
             </Grid>
         </GroupBox>
 

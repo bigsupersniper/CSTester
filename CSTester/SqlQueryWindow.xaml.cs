@@ -94,7 +94,7 @@ namespace CSTester
 
                     if (sql.StartsWith("select", StringComparison.CurrentCultureIgnoreCase))
                     {
-                        var list = query.Query<dynamic>(sql);
+                        var list = query.Query(sql);
                         BindItemsSource(list);
                     }
                     else if (sql.StartsWith("update", StringComparison.CurrentCultureIgnoreCase)
