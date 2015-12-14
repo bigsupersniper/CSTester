@@ -10,4 +10,9 @@ public class MethodContext : IMethodContext
     public JObject Parameters { get; set; }
 
     public Action Execute { get; set; }
+
+    public MethodContext()
+    {
+        this.Parameters = new JObject();
+    }
 }
