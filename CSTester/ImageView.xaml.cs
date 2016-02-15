@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,9 +46,18 @@ namespace CSTester
             if (e.Key == Key.Enter)
             {
                 var url = tbUrl.Text.Trim();
+
                 if (url != "")
                 {
-                    LoadImage(url);
+                    string pattern = @"^(http://|https://)?((?:[A-Za-z0-9]+-[A-Za-z0-9]+|[A-Za-z0-9]+)\.)+([A-Za-z]+)[/\?\:]?.*$";
+                    if(Regex.IsMatch(url, pattern))
+                    {
+                        LoadImage(url);
+                    }
+                    else
+                    {
+                        MessageBox.Show("地址格式不正确", "图片加载失败", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
             }
         }
