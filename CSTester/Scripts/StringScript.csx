@@ -182,8 +182,7 @@ public class StringScript : ScriptContextBase
                 if (string.IsNullOrEmpty(str)) throw new Exception("str不能为空");
 
                 TextPrinter.WriteLine("[Aes/" + cipherMode + "/" + paddingMode + "] "
-                    + context.MethodName + " <output> " + SymmetricAlgorithmProvider.EncryptToBase64(SymmetricAlgorithmType.Aes
-                    , str, key, cipherMode, paddingMode));
+                    + context.MethodName + " <output> " + AesAlgorithmProvider.EncryptToBase64(str, key, cipherMode, paddingMode));
             }
             catch (Exception e)
             {
@@ -221,8 +220,7 @@ public class StringScript : ScriptContextBase
                 if (string.IsNullOrEmpty(str)) throw new Exception("str不能为空");
 
                 TextPrinter.WriteLine("[Aes/" + cipherMode + "/" + paddingMode + "] "
-                    + context.MethodName + " <output> " + SymmetricAlgorithmProvider.DecryptFromBase64(SymmetricAlgorithmType.Aes
-                    , Encoding.UTF8, str, key, cipherMode, paddingMode));
+                    + context.MethodName + " <output> " + AesAlgorithmProvider.DecryptFromBase64(Encoding.UTF8, str, key, cipherMode, paddingMode));
             }
             catch (Exception e)
             {
